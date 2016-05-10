@@ -1,0 +1,68 @@
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class xpath {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver Driver = new FirefoxDriver();
+		try {
+			
+			Driver.manage().window().maximize();
+			Driver.get("http://www.flipkart.com/");
+
+// clicking the webelement which has Samsung only.		
+			
+			List<WebElement> list1 = Driver.findElements(By.xpath("//li[@class='menu-item']//a[starts-with(text(),'Samsung')][@data-tracking-id='0_Samsung']"));
+			
+// finding how many elements we have with the name "Samsung"
+			System.out.println(list1.size());
+			for (WebElement lists : list1 )
+			{
+				System.out.println("Entered for loop");
+				if(lists.equals("Samsung"));
+				{
+					System.out.println("found Samsung");
+					lists.click();
+				}
+			}
+			//Driver.findElement(By.id("fk-top-search-box")).sendKeys("T-shirts");
+// Ways to drill down from parent to child element.
+			
+//		WebElement ref1 = Driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div[1]/div/div[2]/div[2]/form/div/div/div[2]"));
+//		ref1.findElement(By.className("search-bar-submit fk-font-13 fk-font-bold")).click();
+//	Using xpath: 
+//		Driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div[1]/div/div[2]/div[2]/form/div/div/div[2]/input[1]")).click();
+			
+//  Getting the links in a page		
+
+//		List<WebElement> links = Driver.findElements(By.tagName("a"));
+//		for(WebElement link : links) 
+//		{
+//			System.out.println("Links: "+link.getAttribute("href"));
+//		}
+//		System.out.println(links.size());
+
+// Opening  a local file using webdriver.
+			
+//			Driver.get("file:///home/amuthupa/Desktop/table.html");
+//			WebElement cell = Driver.findElement(By.xpath("//td[contains(text(),'string1')]"));
+//			WebElement userName = Driver.findElement(By.cssSelector("form[name='loginForm']:first-child"));
+//			//WebElement lint = Driver.findElement(By.xpath("//td[@id='tr2']/ancestor::table"));
+//			System.out.println("link"+cell+"\n"+"username" + userName);
+			Driver.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Driver.close();
+		}
+
+	}
+
+}
+
+	

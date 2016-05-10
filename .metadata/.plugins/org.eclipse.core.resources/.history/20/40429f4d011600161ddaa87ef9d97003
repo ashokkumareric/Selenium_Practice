@@ -1,0 +1,46 @@
+package Scripts;
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+
+import Pages.SamplePage;
+
+public class DataEntry {
+
+	public static WebDriver driver;
+	SamplePage Sample_Page;
+	@BeforeTest
+	public void Browser_open(){
+		// Initializing the driver for firefox Browser
+		driver = new FirefoxDriver();
+		// Getting to the URL : file:///D:/Selenium-Java/Selenium_SamplePJT/Sampleform.html
+		driver.get("file:///home/amuthupa/Desktop/Sampleform.html");
+		// Maximizing the Browser window
+		driver.manage().window().maximize();
+		// Providing timeouts for each Statement
+		driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+	}
+	
+	@Test
+	public void EnterDatas() {
+//		Sample_Page = new SamplePage(driver);
+//		Sample_Page.Setdata("Rob", "Martin","Rob.Martin@otp.com");
+//		Sample_Page.reset();
+		System.out.println("test method");
+	}
+	
+	@AfterTest
+	public void Browser_close(){
+		System.out.println("Closing the browser");
+		driver.close();
+	}
+	
+
+	
+
+}

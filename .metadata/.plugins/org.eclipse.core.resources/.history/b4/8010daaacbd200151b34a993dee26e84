@@ -1,0 +1,44 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class xpath {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver Driver = new FirefoxDriver();
+		try {
+			
+			Driver.manage().window().maximize();
+			//Driver.get("http://www.flipkart.com/");
+			
+			//Driver.findElement(By.id("fk-top-search-box")).sendKeys("T-shirts");
+//		WebElement ref1 = Driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div[1]/div/div[2]/div[2]/form/div/div/div[2]"));
+//		ref1.findElement(By.className("search-bar-submit fk-font-13 fk-font-bold")).click();
+//	Using xpath: 
+//		Driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div[1]/div/div[2]/div[2]/form/div/div/div[2]/input[1]")).click();
+//  Getting the links in a page		
+//		List<WebElement> links = Driver.findElements(By.tagName("a"));
+//		for(WebElement link : links) 
+//		{
+//			System.out.println("Links: "+link.getAttribute("href"));
+//		}
+//		System.out.println(links.size());
+			Driver.get("file:///home/amuthupa/Desktop/table.html");
+			WebElement cell = Driver.findElement(By.xpath("//td[contains(text(),'string1')]"));
+			WebElement userName = Driver.findElement(By.cssSelector("form[name='loginForm']:first-child"));
+			//WebElement lint = Driver.findElement(By.xpath("//td[@id='tr2']/ancestor::table"));
+			System.out.println("link"+cell+"\n"+"username" + userName);
+			Driver.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Driver.close();
+		}
+
+	}
+
+}
+
+	

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Selenium_Wokspace/src/ActionClass_Notes&apos; to &apos;Selenium_Notes_ActionClass&apos;" description="Rename resource &apos;ActionClass_Notes&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/ActionClass_Notes" name="Selenium_Notes_ActionClass" stamp="1455974653087" updateReferences="true"/>
+</session>

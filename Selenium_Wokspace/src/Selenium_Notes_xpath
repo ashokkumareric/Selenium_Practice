@@ -1,0 +1,96 @@
+Xpath in Selenium:
+
+This is a sample xpath.
+/html/body/div[1]/div[1]/div[2]/div[1]/div/div[2]/div[2]/form/div/div/div[2]/input[1]
+
+Let me say how it works.
+
+This is a sample Html file of a webpage:
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en-IN" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<body class="HomePage new-branding">
+	<div class="newMenu fkart fksk-body line homepg">
+		<script type="text/javascript">
+		<script type="text/javascript">
+		<script type="text/javascript">
+		<script type="text/javascript">
+		<div id="fk-header"> 
+			<style>
+			<div class="appOnlyDialog-popup-content fk-hidden fkheader">
+			<div id="fk-mainhead-id" class="jank-fixed new-header-branding">
+				<div class="header-topbar">
+					<div class="header-content">
+						<div class="unit size1of6">
+						<div class="unitExt mainUnit">
+							<div class="header-links unitExt">
+							<script type="text/javascript">
+							<script type="text/javascript+fk-onload-executed">
+							<div class="fk-searchbar unit fclear">
+								<form id="fk-header-search-form" autocomplete="off" action="/search" method="GET" onsubmit="return submitSearchBarForm();">
+									<div class="search-bar-wrap">
+										<div class="search-bar">
+											<div class="unit search-bar-text-wrap size5of6">
+											<div class="unit search-bar-submit-wrap size1of6">
+Xpath Mentioned above:							<input class="search-bar-submit fk-font-13 fk-font-bold" type="submit" value="Search">
+												<input id="searchTracker" type="hidden" value="start" name="otracker">
+											</div>
+										</div>
+									</div>
+								</form>
+								<fieldset>
+								<script type="text/javascript+fk-onload-executed">
+							</div>
+							<div class="unitExt cartContainer">
+							<script type="text/javascript">
+						</div>
+						<div class="cls"> </div>
+					</div>
+				</div>
+				<div class="menu-header-content">
+				<script type="text/javascript+fk-onload-executed">
+				<div class="fclear"></div>
+			</div>
+		</div>
+		<div id="login-signup-newDialog" class="line hidden">
+	<script type="text/javascript+fk-onload-executed">
+	<script type="text/javascript">
+	<div id="login-signup-newDialog" class="line hidden">
+	
+This is not a complete HTML script:
+So let us drill down to this location manually start writing xpath for the line 36.
+Starting from <html> tag
+first comes <html>, so we have /html/ as the start of the xpath 
+then <body> followed by <div> tag.
+
+Regarding the <div> tab, if we have <div> tabs along the same indentation, then we consider them as <div1>,<div2>, and so on.
+	for example : If we see line 14 and 59, the <div> lies along the same indentation. There is no other indentation along the same 
+					indentation, so we will make the line 14 <div> tab as <div1> and line 59 <div> as <div2> 
+
+But instead if we have only one <div> tab along the same indentation, then we will consider them as <div> only.
+	for example : if we see line 32 and line 33, there is no <div> tab along the same indentation. So we will make that as
+				<div> only.
+				
+So switching back to writing xpath,
+the <div> tag available in line 14 becomes <div1> as there is another <div> along the same indentation in line 59.
+then line 19 and 56 have <div> along the same line.. so we will keep line 19 as <div1>
+then line 22 as <div2> since it is available second as the <div> tab along the same indendation line. 
+then line 23 as <div1>
+then line 24 as <div>, followed by line 26 as <div2>
+then line 30 as <div2>, 
+then line 31 as <form>
+then line 32 as <div>
+then line 33 as <div>
+then line 35 as <div2>
+then line 36 as <input1>
+
+so summarizing all we will get /home/body/div1/div1/div2/div1/div/div2/div2/form/div/div/div2/input1 
+so putting in correct syntax, we will get /html/body/div[1]/div[1]/div[2]/div[1]/div/div[2]/div[2]/form/div/div/div[2]/input[1]
+
+So line 89 == line 4 
+hence figured out how to write xpath.
+But this is a tedious one to find for each and every element. So we need to find some other way to create xpath.
+ 
+    
+																

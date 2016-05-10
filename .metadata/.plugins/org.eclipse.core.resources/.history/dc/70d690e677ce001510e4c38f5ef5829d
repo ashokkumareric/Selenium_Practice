@@ -1,0 +1,14 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class SimpleLogin {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver Driver = new FirefoxDriver();
+		Driver.manage().window().maximize();
+		Driver.get("http://www.flipkart.com/");
+
+	}
+
+}

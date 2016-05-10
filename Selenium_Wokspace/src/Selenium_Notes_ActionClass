@@ -1,0 +1,3 @@
+Actions may not work properly for elements that are not visible or
+enabled. Before using these events, make sure that elements are
+visible and enabled.

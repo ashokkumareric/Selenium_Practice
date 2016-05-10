@@ -1,0 +1,32 @@
+For using jQuery selectors, the page under test should have jQuery library loaded. If your
+application does not use jQuery, you can load the jQuery on the page by attaching jQuery
+library at runtime with the following utility methods:
+private void injectjQueryIfNeeded() {
+	if (!jQueryLoaded())
+		injectjQuery();
+}
+
+public Boolean jQueryLoaded() {
+	Boolean loaded;
+	try {
+		loaded = (Boolean) driver.executeScript("return jQuery()!=null");
+	} catch (WebDriverException e) {
+		loaded = false;
+	}
+	return loaded;
+}
+
+public void injectjQuery() {
+	driver.executeScript(" var headID = document.getElementsByTagName(\"head\")[0];"
+	+ "var newScript = document.createElement('script');" + "newScript.type = 'text/javascript';"
+	+ "newScript.src = 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js';"
+	+ "headID.appendChild(newScript);");
+}
+
+The injectjQueryIfNeeded() method will internally call the jQueryLoaded()
+method to see if the jQuery object is available on the page. If the page does not have
+the jQuery object defined, the injectjQueryIfNeeded() method will call the
+injectjQuery() method to attach the jQuery library to the page header at runtime.
+This is done by adding a <script > element, which refers the Google CDN (Content Delivery
+Network) for jQuery library file, to the page. You may change the version used in this example
+to the latest version of the jQuery library.
