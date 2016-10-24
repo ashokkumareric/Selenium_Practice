@@ -16,7 +16,7 @@ public class static_Block {
 		}		
 	}
 
-// Creating a static class inside a non-static class
+// Creating a static function inside a non-static class
 	static void foo(){
 		System.out.println("Static function inside a non-static class");
 	}
